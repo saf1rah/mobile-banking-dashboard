@@ -2,9 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# =====================================================
+
 # PAGE CONFIG
-# =====================================================
 
 st.set_page_config(
     page_title="Dashboard Mobile Banking",
@@ -12,9 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ==========================================
 # CUSTOM CSS
-# ==========================================
 
 st.markdown("""
 <style>
@@ -208,9 +205,7 @@ FORCE SELECTBOX TEXT
 </style>
 """, unsafe_allow_html=True)
 
-# =====================================================
 # DATA
-# =====================================================
 
 summary = pd.DataFrame({
 
@@ -243,9 +238,7 @@ summary = pd.DataFrame({
     ]
 })
 
-# =====================================================
 # SIDEBAR
-# =====================================================
 
 st.sidebar.title("📋 Dashboard Menu")
 
@@ -266,17 +259,13 @@ Dashboard simulasi sistem antrean login mobile banking
 menggunakan metode Monte Carlo.
 """)
 
-# =====================================================
 # FILTER DATA
-# =====================================================
 
 selected_data = summary[
     summary['Scenario'] == selected_scenario
 ]
 
-# =====================================================
 # TITLE
-# =====================================================
 
 st.title("📊 Dashboard Simulasi Login Mobile Banking")
 
@@ -285,9 +274,7 @@ Dashboard ini menampilkan hasil simulasi sistem antrean login mobile banking
 saat jam sibuk menggunakan metode Monte Carlo.
 """)
 
-# =====================================================
 # METRIC CARDS
-# =====================================================
 
 st.subheader(f"Hasil Skenario: {selected_scenario}")
 
@@ -320,9 +307,7 @@ with col3:
         )
     )
 
-# =====================================================
 # TABLE
-# =====================================================
 
 st.subheader("📋 Tabel Perbandingan")
 
@@ -331,9 +316,7 @@ st.dataframe(
     use_container_width=True
 )
 
-# =====================================================
 # WAITING TIME CHART
-# =====================================================
 
 st.subheader("📈 Average Waiting Time")
 
@@ -359,9 +342,7 @@ ax1.set_ylabel("Waiting Time")
 
 st.pyplot(fig1)
 
-# =====================================================
 # SUCCESS RATE CHART
-# =====================================================
 
 st.subheader("✅ Success Rate")
 
@@ -387,9 +368,7 @@ ax2.set_ylabel("Success Rate")
 
 st.pyplot(fig2)
 
-# =====================================================
 # DROP RATE CHART
-# =====================================================
 
 st.subheader("❌ Drop Rate")
 
@@ -415,9 +394,7 @@ ax3.set_ylabel("Drop Rate")
 
 st.pyplot(fig3)
 
-# =====================================================
-# KESIMPULAN
-# =====================================================
+# kesimpulan
 
 st.subheader("📌 Kesimpulan")
 
